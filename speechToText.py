@@ -1,8 +1,7 @@
 import speech_recognition as sr
 
 import os
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="Path-to-credentials file"
-#GOOGLE_APPLICATION_CREDENTIALS= "Users/Shubham/Downloads/bubbly-monument-393208-80736f7e062b.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="Path-to-credentials-file"
 
 # Create a recognizer
 recognizer = sr.Recognizer()

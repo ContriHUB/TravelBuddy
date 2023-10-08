@@ -1,5 +1,5 @@
 import speech_recognition as sr
-
+import sys
 import os
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="Path-to-Credentials-file"
 
@@ -19,7 +19,8 @@ def spTtxt() :
     # Recognize speech
     try:
         # Convert the audio to text
-        text = recognizer.recognize_google_cloud(audio, language="hi")
+        source_language = sys.argv[1] #take input of source language as first command line argument
+        text = recognizer.recognize_google_cloud(audio, language=source_language)
         print(f"You said: {text}")
     except sr.UnknownValueError:
         print("I didn't understand what you said.")

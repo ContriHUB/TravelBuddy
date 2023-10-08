@@ -1,5 +1,6 @@
 from google.cloud import translate_v2 as translate
 import os
+import sys
 import speechToText
 import textToSpeech
 
@@ -13,7 +14,8 @@ if isinstance(text, bytes):
 
 # Text can also be a sequence of strings, in which case this method
 # will return a sequence of results for each text.
-result = translate_client.translate(text, target_language="en")
+target_language = sys.argv[2] #take input of target language as second command line argument
+result = translate_client.translate(text, target_language=target_language)
 
 print("Text: {}".format(result["input"]))
 print("Translation: {}".format(result["translatedText"]))
